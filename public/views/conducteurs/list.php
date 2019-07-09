@@ -22,7 +22,7 @@
                         <td><?= $conducteur->getPrenom(); ?></td>
                         <td><?= $conducteur->getNom(); ?></td>
                         <td><a href="<?= url('conducteurs/' . $conducteur->getId() . '/edit') ?>" class="btn btn-warning btn-sm">Éditer</a></td>
-                        <td><a href="<?= url('conducteurs/' . $conducteur->getId() . '/delete') ?>" class="btn btn-danger btn-sm" onclick="return confirm('Voulez-vous supprimer cet élément ?)">Supprimer</a></td>
+                        <td><a href="<?= url('conducteurs/' . $conducteur->getId() . '/delete') ?>" class="btn btn-danger btn-sm" onclick="return confirm('Voulez-vous supprimer cet élément ?')">Supprimer</a></td>
                     </tr>
                 <?php endforeach; ?>
                 </tr>

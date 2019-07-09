@@ -20,9 +20,12 @@ $router->get('vehicules/{id}/edit',   'VehiculesController@edit');     // Éditi
 $router->post('vehicules/{id}/edit',  'VehiculesController@update');   // Édition (traitement formulaire)
 $router->get('vehicules/{id}/delete', 'VehiculesController@delete');   // Suppression
 
-$router->get('registration',        'RegistrationController@list');
-$router->get('registration/add',    'RegistrationController@add');
-$router->post('registration/add',   'RegistrationController@save');
+$router->get('associations',             'AssociationsController@list');
+$router->post('associations/add',        'AssociationsController@save');
+$router->get('associations/add',         'AssociationsController@add');
+$router->get('associations/{id}/edit',   'AssociationsController@edit');     // Édition (affichage formulaire)
+$router->post('associations/{id}/edit',  'AssociationsController@update');   // Édition (traitement formulaire)
+$router->get('associations/{id}/delete', 'AssociationsController@delete');   // Suppression
 
 // Run it!
 $router->run();

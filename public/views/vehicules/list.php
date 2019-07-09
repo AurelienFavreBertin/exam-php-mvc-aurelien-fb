@@ -26,7 +26,7 @@
                         <td><?= $vehicule->getCouleur(); ?></td>
                         <td><?= $vehicule->getImmatriculation(); ?></td>
                         <td><a href="<?= url('vehicules/' . $vehicule->getId() . '/edit') ?>" class="btn btn-warning btn-sm">Éditer</a></td>
-                        <td><a href="<?= url('vehicules/' . $vehicule->getId() . '/delete') ?>" class="btn btn-danger btn-sm" onclick="return confirm('Voulez-vous supprimer cet élément ?)">Supprimer</a></td>
+                        <td><a href="<?= url('vehicules/' . $vehicule->getId() . '/delete') ?>" class="btn btn-danger btn-sm" onclick="return confirm('Voulez-vous supprimer cet élément ?')">Supprimer</a></td>
                     </tr>
                 <?php endforeach; ?>
                 </tr>
