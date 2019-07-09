@@ -8,14 +8,13 @@ class AssociationsController {
 
         $associations = Association::findAll();
 
-
         view('associations.list', compact('associations'));
     }
 
     public function add() {
 
         $conducteurs = Conducteur::findAll();
-        $vehicules = Vehicule::findAll();
+        $vehicules   = Vehicule::findAll();
         
         view('associations.add', compact('conducteurs', 'vehicules'));
     }
