@@ -1,12 +1,12 @@
 <?php
 
-class Student extends Db {
+class Conducteur extends Db {
 
-    const TABLE_NAME = "student";
+    const TABLE_NAME = "conducteur";
 
     protected $id;
-    protected $name;
-    protected $email;
+    protected $prenom;
+    protected $nom;
 
 
     public function setId($id) {
@@ -14,13 +14,13 @@ class Student extends Db {
         return $this;
     }
 
-    public function setName($name) {
-        $this->name = $name;
+    public function setPrenom($prenom) {
+        $this->prenom = $prenom;
         return $this;
     }
 
-    public function setEmail($email) {
-        $this->email = $email;
+    public function setNom($nom) {
+        $this->nom = $nom;
         return $this;
     }
 
@@ -28,18 +28,18 @@ class Student extends Db {
         return $this->id;
     }
 
-    public function getName() {
-        return $this->name;
+    public function getPrenom() {
+        return $this->prenom;
     }
-    public function getEmail() {
-        return $this->email;
+    public function getNom() {
+        return $this->nom;
     }
 
     public function save()
     {
         $data = [
-            "name"    => $this->getName(),
-            "email"    => $this->getEmail()
+            "prenom"    => $this->getPrenom(),
+            "nom"    => $this->getNom()
         ];
         
         $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);
@@ -52,8 +52,8 @@ class Student extends Db {
         if ($this->id > 0) {
             $data = [
                 "id"      => $this->getId(),
-                "name"    => $this->getName(),
-                "email"   => $this->getEmail()
+                "prenom"    => $this->getPrenom(),
+                "nom"   => $this->getNom()
             ];
             Db::dbUpdate(self::TABLE_NAME, $data);
             return $this;
@@ -77,18 +77,18 @@ class Student extends Db {
         // Au lieu de retourner un array de données brutes ($data),
         // on retourne un array d'objects de type Example :
 
-        $students = [];
+        $conducteurs = [];
 
         foreach($data as $d) {
-            $student = new Student;
-            $student->setId($d['id']);
-            $student->setName($d['name']);
-            $student->setEmail($d['email']);
+            $conducteur = new Conducteur;
+            $conducteur->setId($d['id']);
+            $conducteur->setPrenom($d['prenom']);
+            $conducteur->setNom($d['nom']);
 
-            $students[] = $student;
+            $conducteurs[] = $conducteur;
         }
 
-        return $students;
+        return $conducteurs;
     }
 
     public static function findOne(int $id)
@@ -100,11 +100,11 @@ class Student extends Db {
         if (count($element) > 0) $element = $element[0];
         else return;
 
-        $student = new Student;
-        $student->setId($element['id']);
-        $student->setName($element['name']);
-        $student->setEmail($element['email']);
+        $conducteur = new Conducteur;
+        $conducteur->setId($element['id']);
+        $conducteur->setPrenom($element['prenom']);
+        $conducteur->setNom($element['nom']);
 
-        return $student;
+        return $conducteur;
     }
 }

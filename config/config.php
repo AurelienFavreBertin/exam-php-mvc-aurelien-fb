@@ -8,7 +8,7 @@ ini_set('allow_url_include', 1);
 
 const DB_HOST = 'localhost';
 const DB_PORT = '3306';
-const DB_NAME = 'cours';
+const DB_NAME = 'utc_aurelien';
 const DB_USER = 'root';
 const DB_PWD  = '';
 
