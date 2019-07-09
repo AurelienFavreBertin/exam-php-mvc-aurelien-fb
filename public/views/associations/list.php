@@ -9,8 +9,8 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>id_vehicule</th>
-                    <th>id_conducteur</th>
+                    <th>Conducteur</th>
+                    <th>Vehicule</th>
                 </tr>
             </thead>
 
@@ -19,8 +19,9 @@
                     <?php foreach ($associations as $association) : ?>
                     <tr>
                         <td><?= $association->getId(); ?></td>
-                        <td><?= $association->getId_vehicule(); ?></td>
-                        <td><?= $association->getId_conducteur(); ?></td>
+                        <td><?= $association->getConducteur()->getPrenom() . "  "; ?><?= $association->getConducteur()->getNom(); ?></td>
+                        <td><?= $association->getVehicule()->getMarque() . "  "; ?><?= $association->getVehicule()->getModele() . "  "; ?><?= $association->getVehicule()->getMarque() . "  "; ?></td>
+
                         <td><a href="<?= url('associations/' . $association->getId() . '/edit') ?>" class="btn btn-warning btn-sm">Éditer</a></td>
                         <td><a href="<?= url('associations/' . $association->getId() . '/delete') ?>" class="btn btn-danger btn-sm" onclick="return confirm('Voulez-vous supprimer cet élément ?')">Supprimer</a></td>
                     </tr>

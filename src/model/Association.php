@@ -42,6 +42,18 @@ class Association extends Db
         return $this->id_conducteur;
     }
 
+    public function getVehicule()
+    {
+        $vehicule = Vehicule::findOne($this->getId_vehicule());
+        return $vehicule;
+    }
+    public function getConducteur()
+    {
+        $conducteur = Conducteur::findOne($this->getId_conducteur());
+        return $conducteur;
+    }
+
+
     public function save()
     {
         $data = [
