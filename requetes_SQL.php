@@ -36,5 +36,5 @@ WHERE prenom = 'Philippe'
 SELECT * FROM association_vehicule_conducteur
 INNER JOIN vehicule
 ON  id_vehicu l e = vehicule.id
-INNER JOIN conducteur
+Left JOIN conducteur
 ON  id_ c onducteur  =  conducteur.id
