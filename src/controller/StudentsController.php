@@ -26,4 +26,25 @@ class StudentsController {
         redirectTo('students');
     }
 
+
+    // Route: POST students/$id/edit
+    public function update($id)
+    {
+        $student = Student::findOne($id);
+        $student->setName($_POST['name']);
+        $student->setEmail($_POST['email']);
+        $student->update();
+
+        redirectTo('students');
+    }
+
+    // Route: GET students/$id/delete
+    public function delete($id)
+    {
+        $student = Student::findOne($id);
+        $student->delete();
+
+        redirectTo('students');
+    }
+
 }

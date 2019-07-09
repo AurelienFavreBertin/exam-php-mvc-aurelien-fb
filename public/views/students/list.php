@@ -2,8 +2,8 @@
 
 <!-- Contenu de la vue -->
 <a href="<?= url('') ?>">
-    < Retour à la page d'accueil</a> <br>
-        <a href="<?= url('students/add') ?>" class="btn btn-sm btn-primary">Ajouter un étudiant</a>
+    < Retour à la page d'accueil</a> <br><br>
+        <a href="<?= url('students/add') ?>" class="btn btn-sm btn-primary">Ajouter</a><br><br>
 
         <table class="table">
             <thead>
