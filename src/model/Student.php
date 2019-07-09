@@ -8,25 +8,18 @@ class Student extends Db {
     protected $name;
     protected $email;
 
+
     public function setId($id) {
         $this->id = $id;
         return $this;
     }
 
     public function setName($name) {
-        if (strlen($name) < 1) {
-            throw new Exception ('Le champ est vide.');
-        }
-
         $this->name = $name;
         return $this;
     }
 
     public function setEmail($email) {
-        if (strlen($email) < 1) {
-            throw new Exception ('Le champ est vide.');
-        }
-
         $this->email = $email;
         return $this;
     }
@@ -38,7 +31,6 @@ class Student extends Db {
     public function getName() {
         return $this->name;
     }
-
     public function getEmail() {
         return $this->email;
     }
@@ -46,16 +38,17 @@ class Student extends Db {
     public function save()
     {
         $data = [
-            "name"  => $this->getName(),
-            "email" => $this->getEmail()
+            "name"    => $this->getName(),
+            "email"    => $this->getEmail()
         ];
-        //if ($this->id > 0) return $this->update();
+        
         $nouvelId = Db::dbCreate(self::TABLE_NAME, $data);
         $this->setId($nouvelId);
         return $this;
     }
 
-    public function update() {
+    public function update()
+    {
         if ($this->id > 0) {
             $data = [
                 "id"      => $this->getId(),
@@ -68,7 +61,8 @@ class Student extends Db {
         return;
     }
 
-    public function delete() {
+    public function delete()
+    {
         $data = [
             'id' => $this->getId(),
         ];
@@ -80,8 +74,12 @@ class Student extends Db {
     public static function findAll() {
         $data = Db::dbFind(self::TABLE_NAME);
 
+        // Au lieu de retourner un array de données brutes ($data),
+        // on retourne un array d'objects de type Example :
+
         $students = [];
-        foreach ($data as $d) {
+
+        foreach($data as $d) {
             $student = new Student;
             $student->setId($d['id']);
             $student->setName($d['name']);
@@ -93,7 +91,8 @@ class Student extends Db {
         return $students;
     }
 
-    public static function findOne(int $id) {
+    public static function findOne(int $id)
+    {
         $request = [
             ['id', '=', $id]
         ];

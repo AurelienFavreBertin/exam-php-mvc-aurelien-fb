@@ -13,7 +13,7 @@ const DB_USER = 'root';
 const DB_PWD  = '';
 
 const WEBSITE_TITLE = "";
-const BASE_URL = "http://localhost/cours/mvc-project-correction/";
+const BASE_URL = "http://localhost/exercice";
 
 const CLASSES_SOURCES = [
     'src/controller',
