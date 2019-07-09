@@ -26,6 +26,12 @@ class StudentsController {
         redirectTo('students');
     }
 
+    // Route: GET students/$id/edit
+    public function edit($id)
+    {
+        $student = Student::findOne($id);
+        view('students.edit', compact('student'));
+    }
 
     // Route: POST students/$id/edit
     public function update($id)
