@@ -23,7 +23,7 @@ class StudentsController {
         $student->setEmail($_POST['email']);
         $student->save();
 
-        redirectTo('student');
+        redirectTo('students');
     }
 
 }

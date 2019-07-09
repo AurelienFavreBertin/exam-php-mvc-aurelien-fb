@@ -6,9 +6,9 @@ $router = new Router();
 
 $router->get('',                    'PagesController@home' );
 
-$router->get('student',             'studentsController@list');
-$router->get('student/add',         'studentsController@add');
-$router->post('student/add',        'studentsController@save');
+$router->get('students',             'studentsController@list');
+$router->get('students/add',         'studentsController@add');
+$router->post('students/add',        'studentsController@save');
 
 $router->get('cours',               'coursController@list');
 $router->get('cours/add',           'coursController@add');
